@@ -7,7 +7,7 @@ const initialUserInput = {
     'expected-return' : 7,
     'duration' : 10
 }
-const UserInput = () => {
+const UserInput = (props) => {
     // const [userName, EnteredUserName] = useState("");
     // const ShowUser = (event) => {
     //     EnteredUserName(event.target.value);
@@ -15,6 +15,7 @@ const UserInput = () => {
     const [userInput, setUserInput] = useState(initialUserInput)
     const submitHandler = (event) => {
         event.preventDefault();
+        props.onCalculate(userInput)
     };
 
     const resetHandler = () => {
